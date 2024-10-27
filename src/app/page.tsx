@@ -356,6 +356,24 @@ export default function Home() {
         )}
       </div>
       {renderGameEndOverlay()}
+
+      <p>
+        {
+          (JSON.stringify(
+            process.env.NODE_ENV === 'production'
+              ? process.env.NEXT_PUBLIC_SERVER_URL
+              : `http://localhost:3001`
+          ),
+          null,
+          2)
+        }
+      </p>
+
+      <p>
+        {
+          JSON.stringify(socketRef, null, 2)
+        }
+      </p>
     </div>
   );
 }
