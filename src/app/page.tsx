@@ -185,6 +185,20 @@ export default function Home() {
         <div className='text-center'>
           <div className='animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto'></div>
           <p className='mt-4'>Connecting to server...</p>
+
+          <p>
+            {
+              (JSON.stringify(
+                process.env.NODE_ENV === 'production'
+                  ? process.env.NEXT_PUBLIC_SERVER_URL
+                  : `http://localhost:3001`
+              ),
+              null,
+              2)
+            }
+          </p>
+
+          <p>{JSON.stringify(socketRef, null, 2)}</p>
         </div>
       </div>
     );
@@ -356,24 +370,6 @@ export default function Home() {
         )}
       </div>
       {renderGameEndOverlay()}
-
-      <p>
-        {
-          (JSON.stringify(
-            process.env.NODE_ENV === 'production'
-              ? process.env.NEXT_PUBLIC_SERVER_URL
-              : `http://localhost:3001`
-          ),
-          null,
-          2)
-        }
-      </p>
-
-      <p>
-        {
-          JSON.stringify(socketRef, null, 2)
-        }
-      </p>
     </div>
   );
 }
