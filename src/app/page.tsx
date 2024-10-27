@@ -169,7 +169,7 @@ export default function Home() {
         <div className='absolute inset-0 bg-gray-500 bg-opacity-20 backdrop-blur-sm flex items-center justify-center'>
           <div className='bg-white p-6 rounded-lg shadow-lg text-center'>
             <h2 className='text-4xl font-bold text-gray-700 mb-2'>
-              It's a Draw!
+              It&apos;s a Draw!
             </h2>
             <p className='text-gray-600'>Great game!</p>
           </div>
