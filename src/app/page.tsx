@@ -187,15 +187,13 @@ export default function Home() {
           <p className='mt-4'>Connecting to server...</p>
 
           <p>
-            {
-              (JSON.stringify(
-                process.env.NODE_ENV === 'production'
-                  ? process.env.NEXT_PUBLIC_SERVER_URL
-                  : `http://localhost:3001`
-              ),
+            {JSON.stringify(
+              process.env.NODE_ENV === 'production'
+                ? process.env.NEXT_PUBLIC_SERVER_URL
+                : `http://localhost:3001`,
               null,
-              2)
-            }
+              2
+            )}
           </p>
 
           <p>{JSON.stringify(socketRef, null, 2)}</p>
